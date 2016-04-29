@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void handleMessage(Message msg) {
           mProgressBar.setProgress(msg.arg1);
-                
+
             }
         };
         thread.start();
