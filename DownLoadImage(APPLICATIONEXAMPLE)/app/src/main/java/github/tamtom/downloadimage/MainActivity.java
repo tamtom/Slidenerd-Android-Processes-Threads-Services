@@ -2,6 +2,7 @@ package github.tamtom.downloadimage;
 
 import android.net.Uri;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ProgressBar mProgressBar;
     private String[] listOfImages;
     private LinearLayout loadingSection;
+    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         mProgressBar = (ProgressBar) findViewById(R.id.downloadProgress);
         mListView.setOnItemClickListener(this);
         loadingSection = (LinearLayout) findViewById(R.id.linear);
+        handler = new Handler();
     }
 
     public void downloadImage(View view) {
@@ -73,6 +76,18 @@ connection.disconnect();
             loadingSection.setVisibility(View.GONE);
         }
     });
+    /*
+     this code for video
+
+               #13 Android Handler Example: Post Runnable Messages
+     */
+
+   /* handler.post(new Runnable() {
+        @Override
+        public void run() {
+            loadingSection.setVisibility(View.GONE);
+        }
+    });*/
 }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -87,7 +102,22 @@ connection.disconnect();
         @Override
         public  void run() {
             try {
+                /*
+                 this code for video
 
+               #13 Android Handler Example: Post Runnable Messages
+
+               */
+
+                /*
+
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                       loadingSection.setVisibility(View.VISIBLE);
+      }
+              });
+*/
                 MainActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public  void run() {
