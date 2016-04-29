@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="github.tamtom.downloadimage.MainActivity">
+
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/downloadURL"
+    />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/downloadURL"
+        android:id="@+id/downloadImage"
+        android:onClick="downloadImage"/>
+    <LinearLayout
+        android:id="@+id/linear"
+        android:visibility="gone"
+        android:layout_below="@id/downloadImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="downloading.."
+            android:gravity="center"
+            />
+        <ProgressBar
+            android:id="@+id/downloadProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleSmall"
+            />
+    </LinearLayout>
+    <ListView
+        android:layout_below="@id/linear"
+        android:id="@+id/urlList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/urls"
+        >
+
+    </ListView>
+</RelativeLayout>
