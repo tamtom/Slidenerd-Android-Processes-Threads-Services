@@ -1,16 +1,22 @@
 package github.tamtom.threading;
 
 import android.os.AsyncTask;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ActionBarActivity {
     private ListView mListView;
+    private ProgressBar mProgressBar;
  private String[] texts = new String[]{
 "String 1", "String 2", "String 3", "String 4"
          , "String 5"
@@ -33,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_PROGRESS);
+
         setContentView(R.layout.activity_main);
+       mProgressBar = (ProgressBar) findViewById(R.id.progressBar1);
         mListView = (ListView) findViewById(R.id.listv);
         mListView.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,new ArrayList<String>()));
 new MyTask().execute();
@@ -45,8 +52,9 @@ new MyTask().execute();
         @Override
         protected void onPreExecute() {
            mAdapter = (ArrayAdapter<String>) mListView.getAdapter();
-            setProgressBarIndeterminate(false);
-            setProgressBarVisibility(true);
+         mProgressBar.setMax(texts.length);
+
+
 
 
         }
@@ -68,13 +76,13 @@ new MyTask().execute();
         protected void onProgressUpdate(String... values) {
             mAdapter.add(values[0]);
             count++;
-            setProgress((int)(((double)count/texts.length)*10000));
+           mProgressBar.setProgress(count);
 
         }
 
         @Override
         protected void onPostExecute(Void aVoid) {
-setProgressBarVisibility(false);
+mProgressBar.setVisibility(View.GONE);
         }
 
     }

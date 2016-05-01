@@ -7,10 +7,17 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="github.tamtom.threading.MainActivity">
+<ProgressBar
+    android:id="@+id/progressBar1"
 
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:progress="0"
+    android:indeterminate="false" />
     <ListView
+        android:layout_below="@id/progressBar1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/listv"></ListView>
