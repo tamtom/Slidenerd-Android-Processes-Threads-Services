@@ -27,7 +27,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private EditText mEditText;
     private ListView mListView;
-    private Button mButton;
+
     private ProgressBar mProgressBar;
     private String[] listOfImages;
     private LinearLayout loadingSection;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mEditText = (EditText) findViewById(R.id.downloadURL);
-        mButton = (Button) findViewById(R.id.downloadImage);
+
         mListView = (ListView) findViewById(R.id.urlList);
 
         listOfImages = getResources().getStringArray(R.array.imageUrls);

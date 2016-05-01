@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">AsyncDownload</string>
+    <string-array name="urls">
+        <item>Image 1(big size)</item>
+        <item>Image 2</item>
+        <item>Image 3</item>
+        <item>Image 4</item>
+        <item>Image 5</item>
+        <item>Image 6</item>
+    </string-array>
+    <string-array name="imageUrls">
+        <item>https://static.pexels.com/photos/26179/pexels-photo-26179.jpg</item>
+        <item>https://cdn3.iconfinder.com/data/icons/picons-social/57/36-android-128.png</item>
+        <item>https://cdn0.iconfinder.com/data/icons/social-network-9/50/8-128.png</item>
+        <item>https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/android-128.png</item>
+        <item>https://cdn1.iconfinder.com/data/icons/iconza-circle-social/64/697039-android-128.png</item>
+        <item>https://cdn3.iconfinder.com/data/icons/social-media-and-logos-shield/32/social_media_logo_android-128.png</item>
+    </string-array>
+</resources>
